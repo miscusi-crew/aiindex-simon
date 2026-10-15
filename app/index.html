@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simon</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="base.css">
+<style>
+  .pads{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;max-width:20rem;aspect-ratio:1;margin:1rem 0}
+  .pad{border:0;border-radius:1rem;opacity:.55;transition:opacity .1s,transform .1s}
+  .pad.lit{opacity:1;transform:scale(1.03)}
+  .pad:disabled{cursor:default}
+  .g{background:#2f9d63}.r{background:#e2463a}.y{background:#f2c94c}.b{background:#2463b3}
+</style>
+</head>
+<body>
+<main>
+  <h1>Simon</h1>
+  <p class="sub">Watch the pads light up, then repeat the sequence. It grows by one each round.</p>
+  <div class="stats"><span>Round <b id="round">0</b></span><span>Best <b id="best">0</b></span></div>
+  <div class="pads" id="pads">
+    <button class="pad g" data-i="0" aria-label="Green"></button>
+    <button class="pad r" data-i="1" aria-label="Red"></button>
+    <button class="pad y" data-i="2" aria-label="Yellow"></button>
+    <button class="pad b" data-i="3" aria-label="Blue"></button>
+  </div>
+  <p class="msg" id="msg" role="status">Press Start.</p>
+  <button id="start" class="primary">Start</button>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
